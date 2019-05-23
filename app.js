@@ -8,7 +8,7 @@ const img = require("./models/image")
 const app = express()
 
 
-const url ="mongodb://localhost/image"
+const url = process.env.DATABASEURL || "mongodb://localhost/image"
 mongoose.connect(url)
 
 
@@ -51,5 +51,5 @@ app.post("/upload",(req, res)=>{
 })
 
 app.listen(process.env.PORT || 2002,()=>{
-    console.log("Server up" )
+    console.log("Server up on " )
 })
