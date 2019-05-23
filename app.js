@@ -8,7 +8,7 @@ const img = require("./models/image")
 const app = express()
 
 
-const url = "mongodb://localhost/image"
+const url ="mongodb://localhost/image"
 mongoose.connect(url)
 
 
