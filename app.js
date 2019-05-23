@@ -8,8 +8,15 @@ const img = require("./models/image")
 const app = express()
 
 
-const url = process.env.DATABASEURL || "mongodb://localhost/image"
-mongoose.connect(url)
+const url ="mongodb://localhost/image"
+mongoose.connect(url,{
+    useNewUrlParser:true,
+    useCreateIndex: true
+}).then(()=>{
+    console.log("Connected to mongoose")
+}).catch(err=>{
+    console.log(err.message)
+})
 
 
 app.use(body.urlencoded({ extended: true }));
